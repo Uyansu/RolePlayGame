@@ -16,12 +16,17 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText =document.querySelector("#monsterHealth");
+
+// Array with the weapon objects
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
   { name: 'claw hammer', power: 50 },
   { name: 'sword', power: 100 }
 ];
+
+//Array with the monsters objects
+
 const monsters = [
   {
     name: "slime",
@@ -39,6 +44,10 @@ const monsters = [
     health: 300
   }
 ]
+
+
+// Array with different objects for state
+
 const locations = [
     {
         name: "town square",
@@ -95,6 +104,8 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+// function to update the buttons and the text of <div id=text>
+
 function update(location) {
   monsterStats.style.display = "none";
   button1.innerText = location["button text"][0];
@@ -105,6 +116,8 @@ function update(location) {
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
 }
+
+//functions for default state
 
 function goTown() {
   update(locations[0]);
@@ -117,6 +130,8 @@ function goStore() {
 function goCave() {
   update(locations[2]);
 }
+
+
 
 function buyHealth() {
   if (gold >= 10) {
@@ -247,6 +262,9 @@ function restart() {
   xpText.innerText = xp;
   goTown();
 }
+
+
+// functions for easterEgg 
 
 function easterEgg() {
   update(locations[7]);
